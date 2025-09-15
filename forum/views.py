@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Thread, Post
 from .forms import ThreadForm, PostForm
+from django.http import HttpResponse
 
 # List all threads
 class ThreadListView(ListView):
@@ -30,15 +31,20 @@ class CreateThreadView(CreateView):
 # Create a new post in a thread
 def create_post(request, thread_id):
     thread = get_object_or_404(Thread, pk=thread_id)
+
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.thread = thread
-            post.author = request.user  # Assumes logged-in user
+            post.author = request.user  # Make sure user is logged in
             post.save()
             return redirect('forum:thread-detail', pk=thread.id)
+        # If form is invalid, we'll show errors below
     else:
-        form = PostForm()
-    return render(request, 'forum/create_post.html', {'form': form, 'thread': thread})
-   
+        form = PostForm()  # GET: show empty form
+
+    return render(request, 'forum/create_post.html', {
+        'form': form,
+        'thread': thread
+    })
