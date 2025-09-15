@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}My Django Forum{% endblock %}</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .thread { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; }
+    .post { margin: 10px 0; padding: 10px; background: #f9f9f9; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { margin-bottom: 20px; font-size: 18px; }
+    .footer { margin-top: 40px; color: #777; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <strong><a href="{% url 'forum:thread-list' %}">💬 Forum</a></strong>
+  </div>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    &copy; {% now "Y" %} My Django Forum
+  </footer>
+</body>
+</html>   

@@ -1,13 +1,13 @@
+{% extends "base.html" %}
 
-{% extends 'base.html' %}
+{% block title %}Reply to Thread{% endblock %}
 
 {% block content %}
-  <h1>Create New Post</h1>
-
-  <form method="post" action="{% url 'create_post' pk=thread.pk %}">
+  <h1>Reply to: {{ thread.title }}</h1>
+  <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <button type="submit">Post Reply</button>
   </form>
-{% endblock %}
- 
+  <p><a href="{% url 'forum:thread-detail' thread.pk %}">← Back to Thread</a></p>
+{% endblock %}   
