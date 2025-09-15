@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-yqt1-(a_36qyj)df7j7c-lmi@!asw(4myhv7p=6&az!@z8fv2a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pair2learn.pythonanywhere.com']
 
 
 # Application definition
