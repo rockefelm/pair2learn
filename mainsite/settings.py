@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['pair2learn.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'forum',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
