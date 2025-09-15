@@ -6,10 +6,16 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <style>
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
             .logo {
                 width: 200px;        /* Default size */
                 height: auto;
-                transition: width 0.3s ease; /* Smooth resize */
+                flex-shrink: 0;
             }
 
             /* On smaller screens, let it scale down */
@@ -18,9 +24,16 @@
                     width: 150px;
                 }
             }
+
+            .site-title {
+                margin: 0;
+                font-size: 2rem;
+            }
         </style>
-        <img src="{% static 'images/pair2learn-logo.png' %}" alt="Pair2Learn Logo" class="logo">
-        <h1>Welcome to Pair2Learn</h1>
+        <div class="header">
+            <img src="{% static 'images/pair2learn-logo.png' %}" alt="Pair2Learn Logo" class="logo">
+            <h1 class="site-title">Welcome to Pair2Learn</h1>
+        </div>
         <p>This is the home page.</p>
       </div>
     </div>
