@@ -1,14 +1,25 @@
 {% load static %}
 
-{% block title %}
-  Pair2Learn
-{% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <img src="{% static 'images/pair2learn-logo.png' %}" alt="Pair2Learn Logo" height="300">
+        <style>
+            .logo {
+                width: 200px;        /* Default size */
+                height: auto;
+                transition: width 0.3s ease; /* Smooth resize */
+            }
+
+            /* On smaller screens, let it scale down */
+            @media (max-width: 600px) {
+                .logo {
+                    width: 150px;
+                }
+            }
+        </style>
+        <img src="{% static 'images/pair2learn-logo.png' %}" alt="Pair2Learn Logo" class="logo">
         <h1>Welcome to Pair2Learn</h1>
         <p>This is the home page.</p>
       </div>
