@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}My Django Forum{% endblock %}</title>
+  <title>{% block title %}Pairing Forum{% endblock %}</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 40px; }
     .thread { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; }
@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="nav">
-    <strong><a href="{% url 'forum:thread-list' %}">💬 Forum</a></strong>
+    <strong><a href="{% url 'forum:thread-list' %}">💬 Pairing Forum</a></strong>
   </div>
 
   <main>
@@ -23,7 +23,7 @@
   </main>
 
   <footer class="footer">
-    &copy; {% now "Y" %} My Django Forum
+    &copy; {% now "Y" %} Pairing Forum
   </footer>
 </body>
 </html>   
