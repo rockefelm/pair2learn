@@ -20,5 +20,4 @@ from django.urls import path, include, redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('forum/', include('forum.urls')),
-    path('', lambda request: redirect('forum:thread-list', permanent=False)),  # ← Root goes to forum
 ]
